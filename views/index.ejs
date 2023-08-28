@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>CocktailGunner</title>
+</head>
+<body>
+
+    <div class="px-4 py-5 text-center">
+        <h1 class="display-5 main-header">CocktailGunner</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="title-para lead mb-4">CocktailGunner generates a random cocktail and shows you how to make it with ingredients and instructions. This application uses the <a href="https://www.thecocktaildb.com/" target="_blank">CocktailDB API</a> to get all user requests. Try it out!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <form action="/" id="form" class="form" method="POST">
+                <button type="submit" class="form-submit btn btn-light btn-lg px-4 gap-3">Generate</button>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <%if (locals.data) {%>
+
+        <h2 class="drink-title"><%=data.drinkNameData %> </h2>
+        <img class="drink-img" src=<%=data.drinkImgData %> alt="drink" width="400px" height="400px">
+        <ul class="ingredients-list" style="list-style: none;">
+            <% for (let i = 0; i <= data.drinkIngData.length; i++) {%>
+                <li><%= data.drinkIngData[i] %></li>
+            <% } %>
+        </ul>
+        <div class="instructions-container">
+            <p class="drink-instructions"><%= data.drinkInstructionsData %></p>
+        </div>
+
+    <% } %>
+
+
+    <!--------Footer-------------->
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Source Code</a></li>
+          </ul>
+          <p class="text-center">© <%= new Date().getFullYear();%> Daniel Murillo</p>
+        </footer>
+      </div>
+
+
+    <%if (locals.error) {%>
+        <div id="tag-error" class="tag-error">
+            <%=error%>
+        </div>
+    <%}%>
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

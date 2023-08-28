@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    color: whitesmoke;
+    background-color: #222;
+
+  }
+
+ul {
+    color: whitesmoke;
+}
+
+.title-para {
+    font-size: 1rem;
+}
+
+.main-header {
+    color: hotpink;
+    font-family: 'Lobster';
+    font-size: 4.5rem;
+}
+
+.drink-img {
+    border-radius: 10%;
+}
+
+.drink-title {
+    padding-bottom: 2%;
+    color: hotpink;
+    font-family: 'Lobster';
+    font-size: 2.5rem;
+}
+
+.ingredients-list {
+    padding: 5%;
+    font-size: 1.25rem;
+}
+
+.instructions-container {
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 1rem;
+}
+
