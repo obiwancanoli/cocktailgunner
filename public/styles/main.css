@@ -31,13 +31,17 @@ ul {
 }
 
 .ingredients-list {
-    padding: 5%;
+    padding: 2%;
     font-size: 1.25rem;
 }
 
 .instructions-container {
     padding-left: 20%;
     padding-right: 20%;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: hotpink;
 }
 
+.generate-button {
+    margin-top: 25px;
+}

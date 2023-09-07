@@ -15,14 +15,27 @@
     <div class="px-4 py-5 text-center">
         <h1 class="display-5 main-header">CocktailGunner</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="title-para lead mb-4">CocktailGunner generates a random cocktail and shows you how to make it with ingredients and instructions. This application uses the <a href="https://www.thecocktaildb.com/" target="_blank">CocktailDB API</a> to get all user requests. Try it out!</p>
+          <p class="title-para lead mb-4">CocktailGunner generates a cocktail and shows you how to make it with ingredients and instructions. This application uses the <a href="https://www.thecocktaildb.com/" target="_blank">CocktailDB API</a> to get all user requests. Try it out!</p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <form action="/" id="form" class="form" method="POST">
-                <button type="submit" class="form-submit btn btn-light btn-lg px-4 gap-3">Generate</button>
-            </form>
+            <div class="container">
+                <form action="/" id="form" class="form" method="POST">
+                    <select name="type" class="form-select">
+                        <option value="15200" data-display="Select">Select</option>
+                        <option value="15200">A Day At The Beach</option>
+                        <option value="17831">A Furlong Too Late</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                    <button type="submit" class="generate-button form-submit btn btn-light btn-lg px-4 gap-3">Generate</button>
+                </form>
+            </div>
           </div>
         </div>
     </div>
+
+
+
 
     <%if (locals.data) {%>
 

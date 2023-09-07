@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", async (req, res) => {
     try {
-        const response = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+        const drinkID = req.body.type;
+        const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkID}`);
         const result = response.data;
         console.log(result);
 
@@ -60,7 +61,8 @@ app.get("/", async (req, res) => {
 
 app.post("/", async (req, res) => {
     try {
-        const response = await axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php");
+        const drinkID = req.body.type;
+        const response = await axios.get(`https://www.thecocktaildb.com/api/json/v2/9973533/lookup.php?i=${drinkID}`);
         const result = response.data;
         console.log(result);
 
@@ -96,7 +98,6 @@ app.post("/", async (req, res) => {
             drinkIngData: ingredients,
             drinkInstructionsData: drinkInstructions
         }});
-
 
     } catch (error) {
         console.log("Failed to make request:", error.message);
